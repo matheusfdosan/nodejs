@@ -41,7 +41,7 @@ O V8 é baseado nas últimas features (recursos) do JavaScript, contudo, seu foc
 
 Por que o JavaScript é tão rápido?
 
-O NodeJs é uma plataforma orientada a eventos, que usa uma arquitura de **Single Threaded Event Loop**, para gerenciar vários eventos simultâneos, ou seja, o NodeJs trabalha de uma maneira assíncrona, que faz mais de um evento de cada vez.
+O NodeJs é uma plataforma orientada a eventos, que usa uma arquitetura de **Single Threaded Event Loop**, para gerenciar vários eventos simultâneos, ou seja, o NodeJS trabalha de uma maneira assíncrona, que faz mais de um evento de cada vez.
 
 # Avançando nos entendimentos do NodeJs
 
@@ -71,30 +71,34 @@ O require() chama as funcionalidade que estão dentro dos módulos (./node_modul
 const path = require("path")
 ```
 
-O módulo 'path' é um módulo nativo do Node, ou seja, não é nescessário instalá-lo pois já está. Claro que, também há como criar módulos e instalá-los no Node por meio de NPM.
+O módulo 'path' é um módulo nativo do Node, ou seja, não é necessário instalá-lo pois já está. Claro que, também há como criar módulos e instalá-los no Node por meio de NPM.
 
 Colocamos o required dentro de uma variável, normalmente com o nome do módulo que iremos usar. Usando essa variável para ativar as funcionalidades do módulo, veja algumas funcionalidades do módulo path:
 
-O método `path.dirname(caminho)` retorna o nome do diretório de um path, ou seja, retorna o caminho de um diretório.
+O método `path.dirname(caminho)` retorna os diretórios do caminho de um arquivo.
 
 ```js
 const thisFile = __filename
 console.log("\n" + path.dirname(thisFile))
+// C:\Users\mathe\Desktop\testes\
 ```
 
 O método `path.extname()` retorna o nome da extensão de um arquivo. 
 
 ```js
 console.log("\n" + path.extname("index.html"))
+// .html
 console.log(path.extname("style.css"))
+// .css
 console.log(path.extname("script.js"))
+// .js
 ```
 
 O `path.basename()` retorna a última parte de um caminho.
 
 ```js
 console.log("\n" + path.basename(thisFile))
-console.log(path.dirname(thisFile) + "/" + path.basename(thisFile))
+// C:\Users\mathe\Desktop\testes\code.js
 ```
 
 # Criando o módulo para exportação
@@ -103,9 +107,9 @@ O primeiro passo é criar o arquivo onde vai ficar o módulo, e então escrever,
 
 ```js
 module.exports = {
-	name: "Carlos Miranda",
-	age: 48,
-	height: 1.78,
+  name: "Carlos Miranda",
+  age: 48,
+  height: 1.78,
 }
 ```
 
@@ -139,7 +143,7 @@ O `process.argv` retorna um array, então para pegarmos os dados desse array, pr
 
 ```js
 console.log(
-	process.argv[0],
+  process.argv[0],
   // caminho relativo até o executavel do Node.js
   path.basename(__filename),
   // nome desse arquivo 
