@@ -78,8 +78,7 @@ Colocamos o required dentro de uma variável, normalmente com o nome do módulo 
 O método `path.dirname(caminho)` retorna os diretórios do caminho de um arquivo.
 
 ```js
-const thisFile = __filename
-console.log("\n" + path.dirname(thisFile))
+console.log("\n" + path.dirname(C:\Users\mathe\Desktop\testes\code.js))
 // C:\Users\mathe\Desktop\testes\
 ```
 
@@ -97,7 +96,7 @@ console.log(path.extname("script.js"))
 O `path.basename()` retorna a última parte de um caminho.
 
 ```js
-console.log("\n" + path.basename(thisFile))
+console.log("\n" + path.basename(__filename))
 // C:\Users\mathe\Desktop\testes\code.js
 ```
 
